@@ -6,7 +6,12 @@ target 'RainbowNails' do
   use_frameworks!
 
   # Pods for RainbowNails
-  pod 'Firebase/Core'
+  pod 'FirebaseCore', '5.1.3'
+  pod 'FirebaseAnalytics', '5.1.4'
+  pod 'FirebaseMessaging', '3.1.2'
+  pod 'FirebaseInstanceID', '3.2.1'
+  pod 'FirebaseDatabase', '5.0.3'
+  pod 'FirebaseAuth', '5.0.4'
 
   target 'RainbowNailsTests' do
     inherit! :search_paths

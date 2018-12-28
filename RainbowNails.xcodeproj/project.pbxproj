@@ -16,6 +16,7 @@
 		35B60FAD2167792A0013854B /* RainbowNailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B60FAC2167792A0013854B /* RainbowNailsTests.swift */; };
 		35B60FB8216785EB0013854B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35B60FB7216785EB0013854B /* GoogleService-Info.plist */; };
 		35B60FB9216785EB0013854B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35B60FB7216785EB0013854B /* GoogleService-Info.plist */; };
+		35CEA1BE216F954200F1B0F1 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CEA1BD216F954200F1B0F1 /* LoginManager.swift */; };
 		A41A21AADB349FBF6B0554EF /* Pods_RainbowNails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03F28C135952DF4E4090C585 /* Pods_RainbowNails.framework */; };
 		FEB7326289D3EC8595FB8613 /* Pods_RainbowNailsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86F68CD6D1E2CBDD93627E2A /* Pods_RainbowNailsTests.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,7 @@
 		35B60FAC2167792A0013854B /* RainbowNailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowNailsTests.swift; sourceTree = "<group>"; };
 		35B60FAE2167792A0013854B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35B60FB7216785EB0013854B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		35CEA1BD216F954200F1B0F1 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		60E55D65720007C9C66E4992 /* Pods-RainbowNails.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainbowNails.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RainbowNails/Pods-RainbowNails.debug.xcconfig"; sourceTree = "<group>"; };
 		86F68CD6D1E2CBDD93627E2A /* Pods_RainbowNailsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RainbowNailsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD183FBBE9EECC6F89C5F206 /* Pods-RainbowNails.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainbowNails.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainbowNails/Pods-RainbowNails.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,7 +89,6 @@
 			children = (
 				35B60F93216779270013854B /* RainbowNails */,
 				35B60FAB2167792A0013854B /* RainbowNailsTests */,
-				35B60F92216779270013854B /* Products */,
 				2FADF25CFE85F6279B2C80FD /* Pods */,
 				B20C8EFD994CB2A0C40C7EFF /* Frameworks */,
 			);
@@ -100,6 +101,7 @@
 				35B60FA82167792A0013854B /* RainbowNailsTests.xctest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		35B60F93216779270013854B /* RainbowNails */ = {
@@ -112,6 +114,7 @@
 				35B60FA0216779290013854B /* LaunchScreen.storyboard */,
 				35B60FA3216779290013854B /* Info.plist */,
 				35B60FB7216785EB0013854B /* GoogleService-Info.plist */,
+				35CEA1C0216F95A100F1B0F1 /* Managers */,
 				35B60F9B216779270013854B /* RainbowNails.xcdatamodeld */,
 			);
 			path = RainbowNails;
@@ -120,10 +123,19 @@
 		35B60FAB2167792A0013854B /* RainbowNailsTests */ = {
 			isa = PBXGroup;
 			children = (
+				35B60F92216779270013854B /* Products */,
 				35B60FAC2167792A0013854B /* RainbowNailsTests.swift */,
 				35B60FAE2167792A0013854B /* Info.plist */,
 			);
 			path = RainbowNailsTests;
+			sourceTree = "<group>";
+		};
+		35CEA1C0216F95A100F1B0F1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				35CEA1BD216F954200F1B0F1 /* LoginManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		B20C8EFD994CB2A0C40C7EFF /* Frameworks */ = {
@@ -280,12 +292,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RainbowNails/Pods-RainbowNails-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35CEA1BE216F954200F1B0F1 /* LoginManager.swift in Sources */,
 				35B60F97216779270013854B /* ViewController.swift in Sources */,
 				35B60F95216779270013854B /* AppDelegate.swift in Sources */,
 				35B60F9D216779270013854B /* RainbowNails.xcdatamodeld in Sources */,
